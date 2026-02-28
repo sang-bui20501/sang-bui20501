@@ -58,9 +58,9 @@ export function SkillsSection() {
                 sx={{
                   mb: 6,
                   p: 3,
-                  border: '3px solid var(--spring-green)',
-                  background: 'linear-gradient(135deg, rgba(75,138,58,0.2) 0%, rgba(36,54,36,0.8) 100%)',
-                  boxShadow: '0 0 16px rgba(123,201,106,0.2), 6px 6px 0 var(--wood-dark)',
+                  border: '3px solid var(--harvest-gold)',
+                  background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(15,23,42,0.8) 100%)',
+                  boxShadow: '0 0 16px rgba(59,130,246,0.2), 6px 6px 0 var(--wood-dark)',
                   position: 'relative',
                 }}
               >
@@ -70,8 +70,8 @@ export function SkillsSection() {
                     sx={{
                       fontFamily: 'var(--font-press-start), "Press Start 2P"',
                       fontSize: '0.65rem',
-                      color: 'var(--spring-green)',
-                      textShadow: '0 0 8px rgba(123,201,106,0.5)',
+                      color: 'var(--harvest-gold)',
+                      textShadow: '0 0 8px rgba(59,130,246,0.5)',
                     }}
                   >
                     AI & AUTOMATION
@@ -119,9 +119,9 @@ export function SkillsSection() {
                           sx={{
                             fontFamily: 'var(--font-vt323), "VT323"',
                             fontSize: '1.1rem',
-                            background: 'var(--wood-brown)',
+                            background: 'rgba(59,130,246,0.15)',
                             color: 'var(--cream)',
-                            border: '2px solid var(--wood-tan)',
+                            border: '2px solid rgba(59,130,246,0.3)',
                             '& .MuiChip-icon': { ml: 0.5 },
                           }}
                         />
@@ -155,9 +155,9 @@ export function SkillsSection() {
                   sx={{
                     fontFamily: 'var(--font-vt323), "VT323"',
                     fontSize: '1rem',
-                    background: 'var(--wood-brown)',
+                    background: 'rgba(59,130,246,0.1)',
                     color: 'var(--cream-dim)',
-                    border: '2px solid var(--wood-tan)',
+                    border: '2px solid rgba(59,130,246,0.2)',
                     '& .MuiChip-icon': { ml: 0.5 },
                   }}
                 />

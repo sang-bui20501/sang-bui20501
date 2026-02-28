@@ -101,14 +101,14 @@ export function ProjectsSection() {
                 className="project-card"
                 sx={{
                   mb: 4,
-                  borderColor: 'var(--spring-green)',
-                  boxShadow: '0 0 20px rgba(123,201,106,0.2), 8px 8px 0 var(--wood-dark)',
+                  borderColor: 'var(--harvest-gold)',
+                  boxShadow: '0 0 20px rgba(59,130,246,0.2), 8px 8px 0 var(--wood-dark)',
                 }}
               >
                 <Box
                   sx={{
                     p: 3,
-                    background: 'linear-gradient(135deg, rgba(74,138,58,0.3) 0%, rgba(36,54,36,0.9) 100%)',
+                    background: 'linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(15,23,42,0.9) 100%)',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -123,7 +123,7 @@ export function ProjectsSection() {
                         sx={{
                           fontFamily: 'var(--font-press-start), "Press Start 2P"',
                           fontSize: '0.5rem',
-                          color: 'var(--spring-green)',
+                          color: 'var(--harvest-light)',
                           mb: 0.5,
                         }}
                       >
@@ -175,9 +175,9 @@ export function ProjectsSection() {
                         sx={{
                           fontFamily: 'var(--font-vt323), "VT323"',
                           fontSize: '0.9rem',
-                          background: 'rgba(74,138,58,0.25)',
-                          color: 'var(--spring-light)',
-                          border: '1px solid var(--spring-green)',
+                          background: 'rgba(59,130,246,0.15)',
+                          color: 'var(--autumn-light)',
+                          border: '1px solid var(--harvest-gold)',
                           height: 24,
                         }}
                       />
@@ -187,7 +187,7 @@ export function ProjectsSection() {
                     sx={{
                       fontFamily: 'var(--font-vt323), "VT323"',
                       fontSize: '1.1rem',
-                      color: 'var(--spring-green)',
+                      color: 'var(--harvest-light)',
                       cursor: 'pointer',
                     }}
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

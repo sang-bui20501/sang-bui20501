@@ -6,9 +6,10 @@ import { Box } from '@mui/material';
 
 interface Star {
   id: number;
-  x: number;
+  startX: number;
+  startY: number;
   duration: number;
-  delay: number;
+  angle: number;
 }
 
 export function ShootingStars() {
@@ -16,28 +17,29 @@ export function ShootingStars() {
 
   useEffect(() => {
     const createStar = () => {
+      const angle = 55 + Math.random() * 20; // 55-75 degrees (steep diagonal)
       const star: Star = {
         id: Date.now() + Math.random(),
-        x: Math.random() * 100,
-        duration: 2 + Math.random() * 2,
-        delay: 0,
+        startX: 5 + Math.random() * 60,
+        startY: -5 + Math.random() * 20,
+        duration: 0.3 + Math.random() * 0.4, // Super fast: 0.3-0.7s
+        angle,
       };
       setStars((prev) => [...prev, star]);
 
-      // Remove star after animation
       setTimeout(() => {
         setStars((prev) => prev.filter((s) => s.id !== star.id));
-      }, star.duration * 1000 + 500);
+      }, star.duration * 1000 + 100);
     };
 
-    // Initial stars
+    // Initial burst
     createStar();
-    setTimeout(createStar, 500);
+    setTimeout(createStar, 200);
 
-    // Spawn new stars randomly
+    // Spawn randomly
     const interval = setInterval(() => {
-      if (Math.random() > 0.3) createStar();
-    }, 800 + Math.random() * 1200);
+      if (Math.random() > 0.5) createStar();
+    }, 400 + Math.random() * 600);
 
     return () => clearInterval(interval);
   }, []);
@@ -53,37 +55,44 @@ export function ShootingStars() {
       }}
     >
       <AnimatePresence>
-        {stars.map((star) => (
-          <motion.div
-            key={star.id}
-            initial={{ x: `${star.x}vw`, y: '-5%', opacity: 0 }}
-            animate={{ x: `${star.x + 15}vw`, y: '110%', opacity: [0, 0.5, 0.5, 0] }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: star.duration, ease: 'linear' }}
-            style={{
-              position: 'absolute',
-              width: 3,
-              height: 3,
-              background: 'rgba(255,255,255,0.7)',
-              borderRadius: '50%',
-              boxShadow: '0 0 4px 2px rgba(255,255,255,0.4), 0 0 8px 4px rgba(59,130,246,0.25)',
-            }}
-          >
-            {/* Trail — rotated to match diagonal trajectory (down-right movement, trail points up-left) */}
-            <div
+        {stars.map((star) => {
+          // Calculate end position based on angle (steep diagonal down-right)
+          const distance = 120; // % of viewport
+          const rad = (star.angle * Math.PI) / 180;
+          const endX = star.startX + Math.cos(rad) * distance * 0.5;
+          const endY = star.startY + Math.sin(rad) * distance;
+
+          return (
+            <motion.div
+              key={star.id}
+              initial={{ left: `${star.startX}%`, top: `${star.startY}%`, opacity: 1, scale: 1 }}
+              animate={{ left: `${endX}%`, top: `${endY}%`, opacity: [1, 1, 0], scale: [1, 0.8, 0.5] }}
+              transition={{ duration: star.duration, ease: 'linear' }}
               style={{
                 position: 'absolute',
-                bottom: '100%',
-                left: '50%',
-                transform: 'translateX(-50%) rotate(15deg)',
-                transformOrigin: 'bottom center',
-                width: 2,
-                height: 50,
-                background: 'linear-gradient(to bottom, transparent, rgba(59,130,246,0.2), rgba(255,255,255,0.35))',
+                width: 3,
+                height: 3,
+                background: '#fff',
+                borderRadius: '50%',
+                boxShadow: '0 0 8px 4px rgba(255,255,255,0.9), 0 0 20px 10px rgba(100,180,255,0.5)',
               }}
-            />
-          </motion.div>
-        ))}
+            >
+              {/* Long trail aligned with movement direction */}
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 2,
+                  height: 120,
+                  background: 'linear-gradient(to bottom, transparent 0%, rgba(100,180,255,0.2) 20%, rgba(255,255,255,0.7) 100%)',
+                  bottom: '50%',
+                  left: '50%',
+                  transform: `translateX(-50%) rotate(${star.angle - 90}deg)`,
+                  transformOrigin: 'bottom center',
+                }}
+              />
+            </motion.div>
+          );
+        })}
       </AnimatePresence>
     </Box>
   );
