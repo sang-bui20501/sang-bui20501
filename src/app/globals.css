@@ -103,8 +103,8 @@ body::before {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c8e870;
-  box-shadow: 0 0 6px 2px rgba(200, 232, 112, 0.6);
+  background: #93c5fd;
+  box-shadow: 0 0 6px 2px rgba(147, 197, 253, 0.6);
 }
 
 @keyframes firefly-float-1 {
@@ -127,8 +127,8 @@ body::before {
   100% { transform: translate(-5px, -75px); opacity: 0; }
 }
 @keyframes firefly-pulse {
-  0%, 100% { box-shadow: 0 0 6px 2px rgba(200, 232, 112, 0.6); }
-  50%       { box-shadow: 0 0 10px 4px rgba(200, 232, 112, 0.9); }
+  0%, 100% { box-shadow: 0 0 6px 2px rgba(147, 197, 253, 0.6); }
+  50%       { box-shadow: 0 0 10px 4px rgba(147, 197, 253, 0.9); }
 }
 
 .firefly { animation: firefly-pulse 1.5s ease-in-out infinite; }
@@ -298,7 +298,7 @@ body::before {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg,
-    rgba(212,160,23,0.06) 0%,
+    rgba(59,130,246,0.06) 0%,
     transparent 50%,
     rgba(0,0,0,0.08) 100%);
   pointer-events: none;
@@ -330,7 +330,7 @@ body::before {
 }
 
 .profile-card-inner {
-  background: linear-gradient(180deg, rgba(212,160,23,0.04) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, transparent 100%);
   padding: 20px;
 }
 
@@ -341,7 +341,7 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
   animation: card-shine 5s ease-in-out infinite;
 }
 
@@ -533,6 +533,6 @@ textarea:focus-visible {
   box-shadow:
     0 0 10px var(--harvest-gold),
     0 0 20px var(--autumn-orange),
-    0 0 30px rgba(212,160,23,0.4);
+    0 0 30px rgba(59,130,246,0.4);
 }
 

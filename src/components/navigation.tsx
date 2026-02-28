@@ -44,7 +44,7 @@ export function Navigation() {
       position="fixed"
       elevation={0}
       sx={{
-        background: scrolled ? 'rgba(15,31,15,0.95)' : 'transparent',
+        background: scrolled ? 'rgba(10,15,26,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(4px)' : 'none',
         transition: 'background 0.3s ease',
         borderBottom: scrolled ? '2px solid var(--harvest-gold)' : 'none',
@@ -59,7 +59,7 @@ export function Navigation() {
             textShadow: '2px 2px 0 var(--wood-dark)',
           }}
         >
-          🌿 SANG.DEV
+          🚀 SANG.DEV
         </Typography>
 
         <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 } }}>
@@ -80,7 +80,7 @@ export function Navigation() {
                   content: activeSection === item.id ? '"▶ "' : '""',
                 },
                 '&:hover': {
-                  background: 'rgba(212,160,23,0.15)',
+                  background: 'rgba(59,130,246,0.15)',
                   transform: 'none',
                   boxShadow: 'none',
                   color: 'var(--harvest-light)',
@@ -143,7 +143,7 @@ export function Footer() {
         Crafted with Next.js, React &amp; Framer Motion
       </Typography>
       <Typography sx={{ fontFamily: 'var(--font-press-start), "Press Start 2P"', fontSize: '0.5rem', color: 'var(--wood-tan)' }}>
-        © 2025 SANG BUI • MAY YOUR HARVEST BE PLENTIFUL
+        © 2025 SANG BUI • BUILDING SOFTWARE THAT SHIPS
       </Typography>
     </Box>
   );

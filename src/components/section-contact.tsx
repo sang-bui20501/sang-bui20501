@@ -9,6 +9,20 @@ import { profileData } from '@/data/profile-data';
 export function ContactSection() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
 
+  /** Compose mailto: link from form fields and open user's email client */
+  const handleSubmit = () => {
+    const to = profileData.contact.email;
+    const subject = encodeURIComponent(
+      `Project Inquiry from ${formState.name || 'Website Visitor'}`
+    );
+    const body = encodeURIComponent(
+      `Hi Sang,\n\n${formState.message}\n\n—\n${formState.name}\n${formState.email}`
+    );
+    window.open(`mailto:${to}?subject=${subject}&body=${body}`, '_self');
+  };
+
+  const isValid = formState.name.trim() && formState.email.trim() && formState.message.trim();
+
   return (
     <Box id="contact" sx={{ py: 12, background: 'var(--dark-bg)' }}>
       <Container maxWidth="md">
@@ -98,9 +112,10 @@ export function ContactSection() {
                   What are you building? I&apos;ll get back within 24 hours.
                 </Typography>
 
-                <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <Box component="form" onSubmit={(e) => { e.preventDefault(); handleSubmit(); }} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   <TextField
                     fullWidth
+                    required
                     label="YOUR NAME"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
@@ -108,6 +123,7 @@ export function ContactSection() {
                   />
                   <TextField
                     fullWidth
+                    required
                     label="YOUR EMAIL"
                     type="email"
                     value={formState.email}
@@ -116,6 +132,7 @@ export function ContactSection() {
                   />
                   <TextField
                     fullWidth
+                    required
                     label="DESCRIBE YOUR PROJECT"
                     multiline
                     rows={4}
@@ -123,7 +140,7 @@ export function ContactSection() {
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     InputLabelProps={{ sx: { fontFamily: 'var(--font-press-start), "Press Start 2P"', fontSize: '0.5rem' } }}
                   />
-                  <Button variant="contained" fullWidth>
+                  <Button type="submit" variant="contained" fullWidth disabled={!isValid}>
                     LET&apos;S BUILD TOGETHER
                   </Button>
                 </Box>

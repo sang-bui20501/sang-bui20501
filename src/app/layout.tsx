@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${pressStart2P.variable} ${vt323.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#1a2e1a" />
+        <meta name="theme-color" content="#0a0f1a" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"

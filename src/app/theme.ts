@@ -2,37 +2,37 @@
 
 import { createTheme } from '@mui/material/styles';
 
-// Stardew Valley cozy farm color palette
+// Blue + White Professional Palette
 const cozyColors = {
-  // Warm text
-  cream: '#f5e6d0',
-  creamDim: '#eee8dc',
-  creamMuted: '#d4c4a8',
-  wheat: '#c9a87c',
+  // Text colors
+  cream: '#f0f4ff',
+  creamDim: '#e2e8f0',
+  creamMuted: '#94a3b8',
+  wheat: '#cbd5e1',
 
   // Accent / primary
-  harvestGold: '#d4a017',
-  harvestLight: '#e8c44a',
-  autumnOrange: '#e8913a',
-  springGreen: '#7bc96a',
-  springLight: '#a0d890',
+  harvestGold: '#3b82f6',
+  harvestLight: '#60a5fa',
+  autumnOrange: '#2563eb',
+  springGreen: '#38bdf8',
+  springLight: '#7dd3fc',
 
   // Backgrounds
-  darkBg: '#1a2e1a',
-  darkerBg: '#0f1f0f',
-  panelBg: '#243624',
-  cardBg: '#2e4020',
+  darkBg: '#0f172a',
+  darkerBg: '#0a0f1a',
+  panelBg: '#1e293b',
+  cardBg: '#1a2744',
 
-  // Wood tones
-  woodDark: '#2a1f14',
-  woodBrown: '#3d2b1a',
-  woodTan: '#5c4033',
-  woodLight: '#6b4c30',
+  // Dark tones
+  woodDark: '#0c1425',
+  woodBrown: '#1a2744',
+  woodTan: '#334155',
+  woodLight: '#475569',
 
-  // XP bar
-  xpGreen: '#7bc96a',
-  xpYellow: '#d4a017',
-  xpRed: '#c04a2a',
+  // Status
+  xpGreen: '#38bdf8',
+  xpYellow: '#3b82f6',
+  xpRed: '#ef4444',
 };
 
 export const theme = createTheme({
@@ -148,7 +148,7 @@ export const theme = createTheme({
           color: cozyColors.harvestGold,
           '&:hover': {
             borderColor: cozyColors.harvestLight,
-            background: 'rgba(212,160,23,0.12)',
+            background: 'rgba(59,130,246,0.12)',
           },
         },
       },

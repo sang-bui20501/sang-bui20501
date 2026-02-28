@@ -220,7 +220,7 @@ export function ProjectsSection() {
                   <Box
                     sx={{
                       p: 2,
-                      background: 'linear-gradient(180deg, var(--wood-brown) 0%, var(--panel-bg) 100%)',
+                      background: 'linear-gradient(180deg, rgba(59,130,246,0.12) 0%, var(--panel-bg) 100%)',
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
@@ -256,8 +256,8 @@ export function ProjectsSection() {
                           sx={{
                             fontFamily: 'var(--font-vt323), "VT323"',
                             fontSize: '0.85rem',
-                            background: 'var(--wood-brown)',
-                            color: 'var(--harvest-gold)',
+                            background: 'rgba(59,130,246,0.12)',
+                            color: 'var(--autumn-light)',
                             height: 22,
                           }}
                         />
