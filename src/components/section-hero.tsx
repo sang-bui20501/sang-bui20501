@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { profileData } from '@/data/profile-data';
 import { TypewriterText } from './retro-ui';
+import { ShootingStars } from './shooting-stars';
 
 const socialProof = [
   { value: `${profileData.clients}+`, label: 'clients served', icon: '🤝' },
@@ -46,16 +47,10 @@ export function HeroSection() {
         }}
       />
 
-      {/* Shooting stars — fixed position, rendered outside overflow:hidden */}
-      <div className="shooting-stars-container">
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-      </div>
+      {/* Shooting stars */}
+      <ShootingStars />
 
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
