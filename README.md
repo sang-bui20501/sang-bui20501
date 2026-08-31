@@ -149,8 +149,8 @@ const sang: Developer = {
 
 <div align="center">
 
-<a href="mailto:goldensangvn@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+<a href="https://sangbui20501.com">
+  <img src="https://img.shields.io/badge/Website-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
 </a>
 <a href="https://github.com/sang-bui20501">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
